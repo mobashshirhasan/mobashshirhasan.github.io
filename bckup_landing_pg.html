@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobashshir Hasan — Portfolio</title>
+    <meta name="description" content="Mobashshir Hasan — Software Developer. Portfolio and contact." />
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --accent:#6ee7b7;
+            --muted:#9aa4b2;
+            --glass: rgba(255,255,255,0.04);
+            --radius:14px;
+            --maxw:1100px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color-scheme: dark;
+        }
+        html,body{height:100%;}
+        body{
+            margin:0;min-height:100%;background:linear-gradient(180deg,#071021 0%, #071827 50%, #0b1320 100%);display:flex;align-items:center;justify-content:center;color:#e6eef6;line-height:1.45;padding:36px;
+        }
+        .wrap{width:100%;max-width:var(--maxw);}
+        .hero{
+            display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:36px;border-radius:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6);
+        }
+        @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+        .intro h1{font-size:2.1rem;margin:0 0 8px;letter-spacing:-0.5px}
+        .intro h1 .name{background:linear-gradient(90deg,var(--accent),#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:4px}
+        .intro p.lead{color:var(--muted);margin:0 0 18px;font-size:1rem}
+        .ctas{display:flex;gap:12px;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:inherit;text-decoration:none;font-weight:600;backdrop-filter: blur(6px)}
+        .btn.primary{background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042024;border:none}
+        .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+        .profile{display:flex;flex-direction:column;align-items:center;gap:14px}
+        .avatar{width:110px;height:110px;border-radius:999px;background:linear-gradient(180deg,#0ea5a4,#2563eb);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:36px;box-shadow:0 8px 30px rgba(16,24,40,0.6);}
+            /* image avatar matches the initials: fixed size, cover and rounded */
+            .avatar-img{width:110px;height:110px;object-fit:cover;border-radius:999px;display:block;box-shadow:0 8px 30px rgba(16,24,40,0.6);border:1px solid rgba(255,255,255,0.02)}
+            /* ensure both avatar types scale well on narrower screens */
+            @media (max-width:520px){
+                .avatar, .avatar-img{width:86px;height:86px;font-size:28px}
+            }
+        .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+        .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:0.85rem;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+        footer{max-width:var(--maxw);margin:18px auto 0;color:var(--muted);font-size:0.9rem;text-align:center}
+        .socials{display:flex;gap:12px;justify-content:center}
+        .socials a{color:var(--muted);text-decoration:none}
+        small{display:block;margin-top:8px}
+        /* subtle entrance */
+        .hero{transform:translateY(6px);opacity:0;animation:enter .6s ease-out .05s forwards}
+        @keyframes enter{to{transform:none;opacity:1}}
+    </style>
+    <script>
+        // small helper for the view-work CTA
+        function scrollToWork(e){e && e.preventDefault();const el=document.getElementById('work');if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}}
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <main class="hero" role="main" aria-labelledby="greeting">
+            <section class="intro">
+                <h1 id="greeting"><span class="name">Mobashshir Hasan</span></h1>
+                <p class="lead">Software developer focused on building reliable web apps, clean UI and delightful developer experiences. I work mostly with Python and modern frontend tooling.</p>
+                <div class="ctas">
+                    <a href="#work" class="btn primary" onclick="scrollToWork(event)">View Work</a>
+                    <a class="btn" href="mailto:hello@example.com">Contact</a>
+                </div>
+
+                <div style="margin-top:18px" class="card" aria-hidden="true">
+                    <strong style="display:block;margin-bottom:8px">Current focus</strong>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+                        <span class="chip">Web apps</span>
+                        <span class="chip">APIs & automation</span>
+                        <span class="chip">UX & component design</span>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="card profile" aria-label="Profile card">
+                <!-- Avatar image: save your attached image as "avatar.png" next to this HTML file.
+                     If the image fails to load, the initials fallback will show. -->
+                <img class="avatar-img" src="avatar.png" alt="Mobashshir Hasan avatar" onerror="this.style.display='none';document.querySelector('.avatar-initials').style.display='flex'" />
+                <div class="avatar avatar-initials" aria-hidden="true" style="display:none">MH</div>
+                <div style="text-align:center">
+                    <div style="font-weight:700">Mobashshir Hasan</div>
+                    <div style="color:var(--muted);font-size:0.95rem">Software Developer</div>
+                </div>
+
+                <div class="skills" aria-hidden="false">
+                    <span class="chip">Python</span>
+                    <span class="chip">Django / FastAPI</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">React</span>
+                    <span class="chip">SQL</span>
+                </div>
+
+                <div style="width:100%">
+                    <div style="margin-top:14px" class="socials" aria-label="social links">
+                        <a href="#" title="GitHub" aria-label="GitHub">GitHub</a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <section id="work" style="margin-top:28px">
+            <h2 style="margin:0 0 8px">Selected work</h2>
+            <p style="margin:0 0 12px;color:var(--muted)">A few projects highlighting architecture and front-end polish.</p>
+
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start">
+                <div class="card"><strong>Project A</strong><div style="margin-top:8px;color:var(--muted)">Full-stack app for ...</div></div>
+                <div class="card"><strong>Project B</strong><div style="margin-top:8px;color:var(--muted)">API & automation tool.</div></div>
+                <div class="card"><strong>Project C</strong><div style="margin-top:8px;color:var(--muted)">UX focused dashboard.</div></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="socials" aria-hidden="true">
+                <a href="#">Github</a>
+                <a href="#">Twitter</a>
+            </div>
+            <small>© <span id="year"></span> Mobashshir Hasan — Built with HTML & CSS</small>
+        </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

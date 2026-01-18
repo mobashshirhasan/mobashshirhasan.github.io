@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobashshir Hasan — Portfolio</title>
+    <meta name="description" content="Mobashshir Hasan — Software Developer. Portfolio and contact." />
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // small helper for the view-work CTA
+        function scrollToWork(e){e && e.preventDefault();const el=document.getElementById('work');if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}}
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <main class="hero" role="main" aria-labelledby="greeting">
+            <section class="intro">
+                <h1 id="greeting"><span class="name">Mobashshir Hasan</span></h1>
+                <p class="lead">Software developer focused on building reliable web apps, clean UI and delightful developer experiences. I work mostly with Python and modern frontend tooling.</p>
+                <div class="ctas">
+                    <a href="#work" class="btn primary" onclick="scrollToWork(event)">View Work</a>
+                    <a class="btn" href="mobashshir12@gmail.com">Contact</a>
+                </div>
+
+                <div style="margin-top:18px" class="card" aria-hidden="true">
+                    <strong style="display:block;margin-bottom:8px">Current focus</strong>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+                        <span class="chip">Web apps</span>
+                        <span class="chip">APIs & automation</span>
+                        <span class="chip">UX & component design</span>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="card profile" aria-label="Profile card">
+                <!-- Avatar image: save your attached image as "avatar.png" next to this HTML file.
+                     If the image fails to load, the initials fallback will show. -->
+                <img class="avatar-img" src="avatar.png" alt="Mobashshir Hasan avatar" onerror="this.style.display='none';document.querySelector('.avatar-initials').style.display='flex'" />
+                <div class="avatar avatar-initials" aria-hidden="true" style="display:none">MH</div>
+                <div style="text-align:center">
+                    <div style="font-weight:700">Mobashshir Hasan</div>
+                    <div style="color:var(--muted);font-size:0.95rem">Software Developer</div>
+                </div>
+
+                <div class="skills" aria-hidden="false">
+                    <span class="chip">Python</span>
+                    <span class="chip">Django / FastAPI</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">React</span>
+                    <span class="chip">SQL</span>
+                </div>
+
+                <div style="width:100%">
+                    <div style="margin-top:14px" class="socials" aria-label="social links">
+                        <a href="#" title="GitHub" aria-label="GitHub">GitHub</a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">LinkedIn</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <section id="work" style="margin-top:28px">
+            <h2 style="margin:0 0 8px">Selected work</h2>
+            <p style="margin:0 0 12px;color:var(--muted)">A few projects highlighting architecture and front-end polish.</p>
+
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start">
+                <div class="card"><strong>Project A</strong><div style="margin-top:8px;color:var(--muted)">Full-stack app for ...</div></div>
+                <div class="card"><strong>Project B</strong><div style="margin-top:8px;color:var(--muted)">API & automation tool.</div></div>
+                <div class="card"><strong>Project C</strong><div style="margin-top:8px;color:var(--muted)">UX focused dashboard.</div></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="socials" aria-hidden="true">
+                <a href="#">Github</a>
+                <a href="#">Twitter</a>
+            </div>
+            <small>© <span id="year"></span> Mobashshir Hasan — Built with HTML & CSS</small>
+        </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
